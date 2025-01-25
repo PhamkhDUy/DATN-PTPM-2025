@@ -1,0 +1,28 @@
+<div class="home">
+  <div class="header-home">
+    <img src="../assets/images/slider_1.webp" alt="Banner">
+  </div>
+  <div class="body-home">
+    <h1>Sản phẩm mới</h1>
+    <div class="container">
+      <div class="body-home-content-news">
+        <div class="body-cart" ng-repeat="product in products | filter:{category: 'New'}">
+          <img ng-src="{{product.image}}"  alt="{{product.title}}">
+          <div>{{product.title}}</div>
+          <span>{{product.price | currency:"VND":0}}</span>
+        </div>
+      </div>
+    </div>
+    <h1>Sản phẩm nổi bật</h1>
+    <div class="container">
+      <div class="body-home-content-noi-bat">
+        <div class="body-cart" ng-repeat="product in products | filter:{category: 'Featured'}">
+          <img ng-src="{{product.image}}" alt="{{product.title}}">
+          <div>{{product.title}}</div>
+          <span>{{product.price | currency:"VND":0}}</span>
+        </div>
+      </div>
+      <button class="btn-view-all-product"><a href="#!/product">Xem tất cả</a></button>
+    </div>
+  </div>
+</div>

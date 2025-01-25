@@ -1,0 +1,10 @@
+<div class="body-home">
+  <h1>Sản phẩm mới</h1>
+  <div class="container">
+    <div class="body-cart" ng-repeat="product in products">
+      <img ng-src="{{product.image01}}" alt="{{product.title}}">
+      <div>{{product.title}}</div>
+      <span>{{product.price | currency:"VND":0}}</span>
+      <del>150.000 VND</del>
+    </div>
+  </div>
