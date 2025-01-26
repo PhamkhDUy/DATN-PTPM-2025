@@ -10,11 +10,11 @@
       </ul>
     </div>
     <div class="product-right">
-      <div class="product-cart" ng-repeat="product in products">
+      <div class="product-cart" ng-repeat="product in products | filter:{category:'Featured'}">
         <a href="#!/product/id/{{product.id}}"> 
           <img ng-src="{{product.image}}" alt="{{product.title}}">
           <div>{{product.title}}</div>
-          <span>{{product.price | currency:"VND ":0}}</span>
+          <span>{{product.price | currency:"VND":0}}</span>
         </a>  
       </div>
     </div>

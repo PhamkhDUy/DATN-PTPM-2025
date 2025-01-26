@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="detail-product" ng-if="selectedProduct">
+        <div class="detail-product-top">
+            <div class="detail-product-left">
+                <img ng-src="{{selectedProduct.image}}" alt="{{selectedProduct.title}}">
+            </div>
+            <div class="detail-product-right">
+                <h1>{{selectedProduct.title}}</h1>
+                <span>Danh mục: {{selectedProduct.category}}</span> ||
+                <span>Tình trạng: {{selectedProduct.trangThai}}</span>
+                <p>Giá: {{selectedProduct.price | currency:"VND ":0}}</p>
+                <p>Mô tả: {{selectedProduct.description}}</p>
+
+                <div class="quantity-container">
+                    <span class="quantity-label">Số lượng:</span>
+                    <div class="quantity-input">
+                        <button ng-click="decrement()">-</button>
+                        <input ng-model="quantity" ng-change="validateQuantity()" />
+                        <button ng-click="increment()">+</button>
+                    </div>
+                </div>
+                <button class="btn-add-new-product" ng-click="addToCart()">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+        <div class="detail-product-body">
+            <div class="tab-menu">
+                <div class="active">MÔ TẢ SẢN PHẨM</div>
+            </div>
+            <div class="tab-content">
+                <h2>Giày Sneaker Thời Trang Nam/Nữ</h2>
+                <p>Giày sneaker thời trang là sự lựa chọn hoàn hảo cho những ai yêu thích phong cách trẻ trung, năng
+                    động nhưng vẫn muốn đảm bảo sự thoải mái cho đôi chân.</p>
+                <h3>Đặc điểm nổi bật:</h3>
+                <ul>
+                    <li><strong>Chất liệu:</strong>
+                        <ul>
+                            <li>Thân giày làm từ vải canvas cao cấp, thoáng khí, hạn chế mùi hôi chân khi sử dụng lâu
+                                dài.</li>
+                            <li>Đế giày cao su dẻo dai, có độ đàn hồi tốt, chống trơn trượt hiệu quả.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Thiết kế:</strong>
+                        <ul>
+                            <li>Kiểu dáng unisex phù hợp cho cả nam và nữ.</li>
+                            <li>Phong cách tối giản với các màu sắc cơ bản: trắng, đen, xanh navy.</li>
+                            <li>Dễ phối đồ, thích hợp sử dụng khi đi học, đi làm, dạo phố hoặc tập luyện nhẹ.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tính năng:</strong>
+                        <ul>
+                            <li>Đệm lót êm ái giúp nâng đỡ bàn chân, giảm áp lực khi di chuyển lâu.</li>
+                            <li>Đường may chắc chắn, bền bỉ qua thời gian.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Kích cỡ:</h3>
+                <p>Có đầy đủ size từ 36 đến 44.</p>
+                <h3>Lưu ý:</h3>
+                <ul>
+                    <li>Vui lòng chọn size theo bảng hướng dẫn để đảm bảo vừa vặn.</li>
+                    <li>Sản phẩm có thể hút chân không khi vận chuyển để giảm chi phí.</li>
+                </ul>
+                <h3>Giá sản phẩm:</h3>
+                <p>Từ 500.000 VNĐ - 800.000 VNĐ (tùy màu sắc và kích cỡ).</p>
+            </div>
+        </div>
+        <h1>Sản phẩm liên quan</h1>
+
+        <div class="detail-product-bottom">
+            <div class="product-cart" ng-repeat="product in products|filter:{category: selectedProduct.category}">
+                <a href="#!/product/id/{{product.id}}">
+                    <img ng-src="{{product.image}}" alt="{{product.title}}">
+                    <div>{{product.title}}</div>
+                    <span>{{product.price | currency:"VND ":0}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
