@@ -67,7 +67,7 @@
         <h1>Sản phẩm liên quan</h1>
 
         <div class="detail-product-bottom">
-            <div class="product-cart" ng-repeat="product in products|filter:{category: selectedProduct.category}">
+            <div class="product-cart" ng-repeat="product in paginatedProducts">
                 <a href="#!/product/id/{{product.id}}">
                     <img ng-src="{{product.image}}" alt="{{product.title}}">
                     <div>{{product.title}}</div>
@@ -75,6 +75,7 @@
                 </a>
             </div>
         </div>
+
     </div>
 
 

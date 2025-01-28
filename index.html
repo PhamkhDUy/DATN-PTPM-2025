@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="shoeStoreApp">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UShop</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <script src="./assets/fake-data/products.js"></script>
-  <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UShop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="./assets/fake-data/products.js"></script>
+    <script src="app.js"></script>
 </head>
+
 <body>
     <div class="header-top">
         <div class="container">
@@ -29,27 +31,26 @@
     <div class="header-img">
         <img src="assets/images/ushop_logo.png" alt="">
     </div>
-  
+
     <hr>
-  <header>
-    <nav>
-      <a href="#!/">TRANG CHỦ</a>
-      <a href="#!/about">GIỚI THIỆU </a>
-      <a href="#!/product">SẢN PHẨM</a>
-      <a href="#!/contact">LIÊN HỆ</a>
-      <a href="#!/news">TIN TỨC</a>
-    </nav>
-    <div class="header-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-    </div>
-  </header>
+    <header>
+        <nav id="nav-bar">
+            <a href="#!/" id="home">TRANG CHỦ</a>
+            <a href="#!/about" id="about">GIỚI THIỆU</a>
+            <a href="#!/product" id="product">SẢN PHẨM</a>
+            <a href="#!/contact" id="contact">LIÊN HỆ</a>
+            <a href="#!/news" id="news">TIN TỨC</a>
+        </nav>
+        <div class="header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </header>
 
-  <main>
-    <div ng-view></div>
-  </main>
+    <main>
+        <div ng-view></div>
+    </main>
 
-  <footer>
     <footer>
         <div class="container">
             <div class="row">
@@ -101,6 +102,10 @@
             </div>
         </div>
     </footer>
-  </footer>
+
+    <script>
+
+    </script>
 </body>
+
 </html>

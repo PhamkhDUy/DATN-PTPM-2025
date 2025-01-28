@@ -72,9 +72,12 @@ nav a {
   font-size: 16px;
   font-weight: 700;
 }
-
+nav a.active {
+  color: blue;
+  font-weight: bold;
+}
 nav a:hover {
-  color: red;
+  color: blue;
 }
 
 footer {
@@ -151,11 +154,11 @@ button:hover {
 .body-home h1 {
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 30px;
 }
 .body-home-content-news {
   display: flex;
   justify-content: space-around;
+  padding-top: 20px;
 }
 .body-cart div {
   padding-bottom: 10px;
@@ -217,31 +220,49 @@ button:hover {
   padding-bottom: 50px;
 }
 .product-left {
- min-width: 30%;
+  min-width: 30%;
 }
 .product-left ul {
   list-style-type: none;
 }
 .product-left ul li {
   padding-top: 10px;
+  margin-top: 20px;
 }
 .product-left ul li a {
   text-decoration: none;
   color: black;
+  padding: 20px;
 }
-.product-right  {
+.product-left ul li a:hover {
+  color: blue;
+}
+#ul-bar a.active {
+  color: blue;
+}
+.product-left ul li a.active {
+  color: blue;
+  font-weight: bold;
+}
+.product-right {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
 }
+
 .product-cart {
-  width: 25%;
-  padding-right: 20px;
-  padding-top: 30px;
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+  width: 200px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
-.product-cart a{
-text-decoration: none;
+.product-cart a {
+  text-decoration: none;
 }
 .product-cart div {
   padding-bottom: 10px;
@@ -251,29 +272,83 @@ text-decoration: none;
   color: red;
   margin-right: 10px;
 }
+
 .product-cart img {
   width: 200px;
   height: 200px;
+  transition: transform 0.3s ease-in-out;
 }
-.detail-product{
- 
+
+.product-cart:hover img {
+  transform: scale(1.1);
 }
-.detail-product-top{
+
+.product-cart .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: #fff;
+}
+
+.product-cart:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-overlay button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.hover-overlay button:hover {
+  background-color: #333;
+}
+
+.product-cart .product-info {
+  padding: 10px;
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+.detail-product {
+}
+.detail-product-top {
   display: flex;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.detail-product-left{
+.detail-product-left {
   width: 50%;
 }
-.detail-product-left img{
+.detail-product-left img {
   width: 450px;
 }
-.detail-product-right{
-
+.detail-product-right {
 }
-.detail-product-right h1{
-
+.detail-product-right h1 {
 }
 
 .quantity-container {
@@ -313,12 +388,12 @@ text-decoration: none;
 .quantity-input button:active {
   background-color: #ddd;
 }
-.btn-add-new-product{
+.btn-add-new-product {
   padding: 10px 40px;
   background-color: black;
   color: white;
 }
-.btn-add-new-product:hover{
+.btn-add-new-product:hover {
   background-color: blue;
   color: white;
 }
@@ -341,7 +416,63 @@ text-decoration: none;
 .tab-content {
   padding: 20px;
 }
-.detail-product-bottom{
+.hr {
+  font-weight: 700;
+  text-align: center;
+  height: 3px;
+  width: 50px;
+  background-color: black;
+}
+.detail-product-bottom {
   display: flex;
   padding-bottom: 50px;
-} 
+}
+.dot-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding-bottom: 50px;
+}
+
+.dot-pagination span {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot-pagination span.active-dot {
+  background-color: #007bff;
+}
+.pagination {
+  display: flex;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

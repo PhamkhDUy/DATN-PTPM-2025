@@ -1,21 +1,42 @@
 <div class="container">
   <div class="product">
     <div class="product-left">
-      <ul>
+      <ul id="ul-bar">
         <h3>Danh mục sản phẩm</h3>
-        <li><a href="#!/product">Tất cả sản phẩm</a></li>
-        <li><a href="#!/product/new">Sản phẩm mới</a></li>
-        <li><a href="#!/product/featured">Sản phẩm nổi bật</a></li>
-        <li><a href="#!/product/promotion">Sản phẩm khuyến mãi</a></li>
+        <li><a href="#!/product" id="allProducts">Tất cả sản phẩm</a></li>
+        <li><a href="#!/product/new" id="newProducts">Sản phẩm mới</a></li>
+        <li><a href="#!/product/featured" id="featuredProducts">Sản phẩm nổi bật</a></li>
+        <li><a href="#!/product/promotion" id="promotionProducts">Sản phẩm khuyến mãi</a></li>
       </ul>
     </div>
+
     <div class="product-right">
-      <div class="product-cart" ng-repeat="product in products | filter:{category:'Featured'}">
-        <a href="#!/product/id/{{product.id}}"> 
-          <img ng-src="{{product.image}}" alt="{{product.title}}">
-          <div>{{product.title}}</div>
-          <span>{{product.price | currency:"VND":0}}</span>
-        </a>  
+      <div class="product-list">
+        <div class="product-cart" ng-repeat="product in paginatedProducts" ng-click="goToDetailPage(product.id)">
+          <a href="#!/product/id/{{product.id}}">
+            <img ng-src="{{product.image}}" alt="{{product.title}}">
+            <div class="product-info">
+              <h4>{{product.title}}</h4>
+              <span>{{product.price | currency:"VND ":0}}</span>
+            </div>
+          </a>
+          <div class="hover-overlay">
+            <button ng-mouseenter="isHovering=true" ng-mouseleave="isHovering=false">Mua hàng</button>
+            <button ng-mouseenter="isHovering=true" ng-mouseleave="isHovering=false">Xem nhanh</button>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <button ng-disabled="currentPage === 1" ng-click="goToPage(currentPage - 1)">
+          Previous
+        </button>
+        <button ng-repeat="page in [].constructor(totalPages) track by $index"
+          ng-class="{'active': currentPage === $index + 1}" ng-click="goToPage($index + 1)">
+          {{$index + 1}}
+        </button>
+        <button ng-disabled="currentPage === totalPages" ng-click="goToPage(currentPage + 1)">
+          Next
+        </button>
       </div>
     </div>
   </div>
