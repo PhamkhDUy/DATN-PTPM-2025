@@ -1,0 +1,61 @@
+<div class="checkOut" ng-controller="CheckOutController">
+    <div class="container">
+        <h3 class="your-cart">Giỏ hàng của bạn</h3>
+
+        <div class="nothing-cart" ng-if="products.length < 1">
+            <p>Giỏ hàng hiện đang rỗng</p>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+
+        <table class="table" ng-if="products.length >= 1">
+            <thead>
+                <tr>
+                    <th scope="col">Thông tin sản phẩm</th>
+                    <th scope="col">Đơn giá</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider" ng-repeat="product in products">
+                <tr>
+                    <td>
+                        <div class="ttsp-checkout">
+                            <img ng-src="{{product.image}}" alt="{{product.title}}">
+                            <div class="ttsp-title-delete-checkout">
+                                <p>{{product.title}}</p>
+                                <button class="delete-cart" ng-click="deleteCart(product)">Xóa</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product-price-checkout">
+                            {{product.price | currency:"VND ":0}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product-soluong-checkout">
+                            <div class="quantity-container">
+                                <div class="quantity-input">
+                                    <button ng-click="updateQuantity(product, product.quantity - 1)">-</button>
+                                    <input ng-model="product.quantity"
+                                        ng-change="updateQuantity(product, product.quantity)" />
+                                    <button ng-click="updateQuantity(product, product.quantity + 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product-thanhtien-checkout">
+                            <span>{{product.price * product.quantity | currency:"VND ":0}}</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-cart" ng-if="products.length >= 1">
+            <p>Tổng cộng: {{getTotalPrice() | currency:"VND ":0}}</p>
+            <a href="/payment.html"> <button class="btn-thanh-toan-checkOut">Thanh Toan</button></a>
+        </div>
+    </div>
+</div>

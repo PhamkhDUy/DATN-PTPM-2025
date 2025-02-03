@@ -1,0 +1,64 @@
+<div class="href-product">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!/">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="#!/news">Tin tức</a></li>
+                <li class="breadcrumb-item">{{selectedNews.title}}</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="news" ng-controller="DetailNewsController">
+        <!-- Sidebar tin tức -->
+        <div class="news-left">
+            <p>Danh mục tin tức</p>
+            <ul>
+                <li><a href="#!/" ng-class="{active: isActive('/')}">Trang chủ</a></li>
+                <li><a href="#!/about" ng-class="{active: isActive('/about')}">Giới thiệu</a></li>
+                <li><a href="#!/product" ng-class="{active: isActive('/product')}">Sản phẩm</a></li>
+                <li><a href="#!/contact" ng-class="{active: isActive('/contact')}">Liên hệ</a></li>
+                <li><a href="#!/news" ng-class="{active: isActive('/news')}">Tin tức</a></li>
+            </ul>
+
+            <!-- Tin tức liên quan -->
+            <div class="news-left-bottom">
+                <h2>Tin tức liên quan</h2>
+                <div class="row">
+                    <div ng-repeat="news in relatedNews" class="related-news-card">
+                        <div ng-click="goToDetailPage(news.id)" class="new-left-card">
+                            <img ng-src="{{ news.image }}" alt="{{ news.title }}">
+                            <p>{{ news.title }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nội dung chi tiết tin tức -->
+        <div class="news-right">
+            <div class="news-detail-content" ng-if="selectedNews">
+                <h1>{{ selectedNews.title }}</h1>
+                <p><small>{{ selectedNews.time }} - UShop Web</small></p>
+                <p>{{ selectedNews.des }}</p>
+                <p><img ng-src="{{ selectedNews.image }}" alt="{{ selectedNews.title }}"></p>
+                <p>{{selectedNews.description}}</p>
+            </div>
+            <hr>
+            <span>Chia sẻ bài viết: </span>
+            <hr>
+            <span>Viết bình luận của bạn</span>
+            <div class="input-detail-news">
+                <input type="text" placeholder="Họ và tên">
+                <input type="email" placeholder="Email">
+            </div>
+            <textarea name="" id="" placeholder="Nội dung"></textarea>
+            <div></div>
+            <button class="button-detail-new-gui-thong-tin">Gửi thông tin</button>
+        </div>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,62 @@
+<div class="href-product">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!/">Trang chủ</a></li>
+                <li class="breadcrumb-item">Tin tức</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="news" ng-controller="NewsController">
+        <div class="news-left">
+            <p>Danh mục tin tức</p>
+            <ul>
+                <li>
+                    <a href="#!/" ng-class="{active: isActive('/')}">Trang chủ</a>
+                </li>
+                <li><a href="#!/about" ng-class="{active: isActive('/about')}">Giới thiệu</a></li>
+                <li><a href="#!/product" ng-class="{active: isActive('/product')}">Sản phẩm</a></li>
+                <li><a href="#!/contact" ng-class="{active: isActive('/contact')}">Liên hệ</a></li>
+                <li><a href="#!/news" ng-class="{active: isActive('/news')}">Tin tức</a></li>
+            </ul>
+            <div class="news-left-bottom">
+                <h2>Tin tức liên quan</h2>
+                <div class="row">
+                    <div class="col-12" ng-repeat="newsData in newsData">
+                        <a href="#!/news/id/{{newsData.id}}">
+                            <div class="news-left-bottom-card" ng-click="goToDetailPage(newsData.id)">
+                                <img ng-src="{{newsData.image}}" alt="{{newsData.title}}">
+                                <div>{{newsData.title}}</div>
+                            </div>
+                        </a>
+                        <hr class="hr-payment">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news-right">
+            <div class="row">
+                <div class="col-12" ng-repeat="newsData in newsData">
+                    <a href="#!/news/id/{{newsData.id}}">
+                        <div class="new-right-card" ng-click="goToDetailPage(newsData.id)">
+                            <img ng-src="{{newsData.image}}" alt="{{newsData.title}}">
+                            <div class="new-right-card-content">
+                                <b>{{newsData.title}}</b>
+                                <div class="time-web">
+                                    <span>{{newsData.time}}</span>
+                                    <span><i class="fa-solid fa-user"></i>UShop Web</span>
+                                </div>
+                                <p>{{newsData.des}}</p>
+                                <button class="new-right-card-button-doc-tiep">Đọc tiếp</button>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

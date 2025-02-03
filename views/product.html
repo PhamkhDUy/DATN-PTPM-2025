@@ -1,30 +1,70 @@
+<div class="href-product">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#!/">Trang chủ</a></li>
+        <li class="breadcrumb-item">Sản phẩm</li>
+      </ul>
+    </nav>
+  </div>
+</div>
 <div class="container">
   <div class="product">
     <div class="product-left">
       <ul id="ul-bar">
         <h3>Danh mục sản phẩm</h3>
-        <li><a href="#!/product" id="allProducts">Tất cả sản phẩm</a></li>
-        <li><a href="#!/product/new" id="newProducts">Sản phẩm mới</a></li>
-        <li><a href="#!/product/featured" id="featuredProducts">Sản phẩm nổi bật</a></li>
-        <li><a href="#!/product/promotion" id="promotionProducts">Sản phẩm khuyến mãi</a></li>
+        <li>
+          <a href="#!/product" id="allProducts" ng-class="{active: isActive('/product')}">Tất cả sản phẩm</a>
+        </li>
+        <li>
+          <a href="#!/product/new" id="newProducts" ng-class="{active: isActive('/product/new')}">Sản phẩm mới</a>
+        </li>
+        <li>
+          <a href="#!/product/featured" id="featuredProducts" ng-class="{active: isActive('/product/featured')}">Sản
+            phẩm nổi bật</a>
+        </li>
+        <li>
+          <a href="#!/product/promotion" id="promotionProducts" ng-class="{active: isActive('/product/promotion')}">Sản
+            phẩm khuyến mãi</a>
+        </li>
       </ul>
     </div>
 
+
     <div class="product-right">
+      <div class="sort-product">
+        <span>Sắp xếp: </span>
+        <select class="form-control" name="" id="">
+          <option value="0">Default</option>
+          <option value="1">A - Z</option>
+          <option value="2">Z - A</option>
+          <option value="3">Giá tăng dần</option>
+          <option value="4">Giá giảm dần</option>
+        </select>
+      </div>
       <div class="product-list">
-        <div class="product-cart" ng-repeat="product in paginatedProducts" ng-click="goToDetailPage(product.id)">
-          <a href="#!/product/id/{{product.id}}">
-            <img ng-src="{{product.image}}" alt="{{product.title}}">
-            <div class="product-info">
-              <h4>{{product.title}}</h4>
-              <span>{{product.price | currency:"VND ":0}}</span>
+        <div class="row">
+          <div class="col-4" ng-repeat="product in paginatedProducts" ng-click="goToDetailPage(product.id)">
+            <div class="card product-cart">
+              <a href="#!/product/id/{{product.id}}">
+                <div class="card-image">
+                  <img ng-src="{{product.image}}" alt="{{product.title}}">
+                </div>
+                <div class="card-content">
+                  <h4>{{product.title}}</h4>
+                  <span>{{product.price | currency:"VND ":0}}</span>
+                </div>
+              </a>
+              <!-- <div class="card-actions">
+                <button ng-mouseenter="isHovering=true" ng-mouseleave="isHovering=false"
+                  ng-click="showViewCheckOut($event,product)">Mua hàng</button>
+                <button ng-mouseenter="isHovering=true" ng-mouseleave="isHovering=false"
+                  ng-click="showQuickView($event,product)">Xem nhanh</button>
+              </div> -->
             </div>
-          </a>
-          <div class="hover-overlay">
-            <button ng-mouseenter="isHovering=true" ng-mouseleave="isHovering=false">Mua hàng</button>
-            <button ng-mouseenter="isHovering=true" ng-mouseleave="isHovering=false">Xem nhanh</button>
           </div>
         </div>
+
       </div>
       <div class="pagination">
         <button ng-disabled="currentPage === 1" ng-click="goToPage(currentPage - 1)">
@@ -38,6 +78,40 @@
           Next
         </button>
       </div>
+
+
+    </div>
+
+
+  </div>
+</div>
+<div class="modal-overlay" ng-if="isModalVisible === true" class="modal fade in">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-left">
+          <img ng-src="{{ selectedProduct.image }}" alt="{{ selectedProduct.title }}">
+
+        </div>
+        <div class="modal-body-right">
+          <h4 class="modal-title">{{ selectedProduct.title }}</h4>
+          <p>{{ selectedProduct.description }}</p>
+          <p>Price: {{ selectedProduct.price | currency:"VND ":0 }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+</div>
+<script>
+  // Giả sử URL chứa '#!/product', bạn muốn set active cho sản phẩm
+  if (window.location.hash === '#!/product') {
+    document.getElementById('productLink').classList.add('active');
+  } else {
+    document.getElementById('homeLink').classList.add('active');
+  }
+</script>

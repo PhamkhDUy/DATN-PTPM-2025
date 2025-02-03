@@ -1,3 +1,14 @@
+<div class="href-product">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!/">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="#!/product">Sản phẩm</a></li>
+                <li class="breadcrumb-item">{{selectedProduct.title}}</li>
+            </ul>
+        </nav>
+    </div>
+</div>
 <div class="container">
     <div class="detail-product" ng-if="selectedProduct">
         <div class="detail-product-top">
@@ -19,6 +30,7 @@
                         <button ng-click="increment()">+</button>
                     </div>
                 </div>
+
                 <button class="btn-add-new-product" ng-click="addToCart()">Thêm vào giỏ hàng</button>
             </div>
         </div>
@@ -67,7 +79,7 @@
         <h1>Sản phẩm liên quan</h1>
 
         <div class="detail-product-bottom">
-            <div class="product-cart" ng-repeat="product in paginatedProducts">
+            <div class="product-cart" ng-repeat="product in paginatedRelatedProducts">
                 <a href="#!/product/id/{{product.id}}">
                     <img ng-src="{{product.image}}" alt="{{product.title}}">
                     <div>{{product.title}}</div>
@@ -75,6 +87,16 @@
                 </a>
             </div>
         </div>
+
+        <!-- Pagination controls -->
+        <div class="pagination" ng-if="totalPagesRelated > 1">
+            <button ng-disabled="currentPageRelated === 1"
+                ng-click="goToPageRelated(currentPageRelated - 1)">Previous</button>
+            <span>{{currentPageRelated}} / {{totalPagesRelated}}</span>
+            <button ng-disabled="currentPageRelated === totalPagesRelated"
+                ng-click="goToPageRelated(currentPageRelated + 1)">Next</button>
+        </div>
+
 
     </div>
 
