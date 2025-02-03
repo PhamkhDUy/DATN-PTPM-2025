@@ -7,18 +7,9 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
-  {
-    id: 111,
-    title: "Giày thể thao nam",
-    price: 500000,
-    image: "assets/images/giay1.jpg",
-    category: "New",
-    description: "Giày thể thao nam chất lượng cao.",
-    soLuong: 110,
-    trangThai: "Còn hàng"
-  },
+
   {
     id: 112,
     title: "Giày thể thao nam",
@@ -27,7 +18,7 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 113,
@@ -37,7 +28,7 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 114,
@@ -47,7 +38,7 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 115,
@@ -57,7 +48,7 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 116,
@@ -67,7 +58,7 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 117,
@@ -77,7 +68,7 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 118,
@@ -87,7 +78,7 @@ const products = [
     category: "New",
     description: "Giày thể thao nam chất lượng cao.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 2,
@@ -97,8 +88,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 222,
@@ -108,8 +98,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 223,
@@ -119,8 +108,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 224,
@@ -130,8 +118,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 225,
@@ -141,8 +128,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 226,
@@ -152,8 +138,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 227,
@@ -163,8 +148,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 228,
@@ -174,8 +158,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 229,
@@ -185,8 +168,7 @@ const products = [
     category: "Featured",
     description: "Giày chạy bộ nhẹ, bền bỉ.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 3,
@@ -196,7 +178,7 @@ const products = [
     category: "New ",
     description: "Giày đá bóng chuyên nghiệp.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
   },
   {
     id: 4,
@@ -206,8 +188,7 @@ const products = [
     category: "Featured ",
     description: "Giày sneaker thời trang.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 5,
@@ -217,8 +198,7 @@ const products = [
     category: "New ",
     description: "Giày lười nam thoải mái.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 6,
@@ -228,8 +208,7 @@ const products = [
     category: "New ",
     description: "Giày cao gót nữ thanh lịch.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 7,
@@ -239,8 +218,7 @@ const products = [
     category: "Featured ",
     description: "Giày boot nữ phong cách.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 8,
@@ -250,19 +228,17 @@ const products = [
     category: "Featured ",
     description: "Giày cổ cao nữ phong cách.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 9,
     title: "Giày cao gót nữ",
     price: 1100000,
-    image: "assets/images/giay9.jpg",
+    image: "assets/images/giay1.jpg",
     category: " Promotion ",
     description: "Giày cao gót nữ phong cách.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 10,
@@ -272,8 +248,7 @@ const products = [
     category: "Promotion",
     description: "Giày lười phong cách.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 11,
@@ -283,8 +258,7 @@ const products = [
     category: "Promotion",
     description: "Giày cao gót nữ phong cách.",
     soLuong: 110,
-    trangThai: "Còn hàng"
-
+    trangThai: "Còn hàng",
   },
   {
     id: 12,
@@ -294,6 +268,36 @@ const products = [
     category: "Promotion",
     description: "Giày lười phong cách.",
     soLuong: 110,
-    trangThai: "Còn hàng"
+    trangThai: "Còn hàng",
+  },
+];
+const newsData = [
+  {
+    id: 1,
+    title: "Giày mùa hè nắng: 3 loại giày thời trang bạn nên đi vào mùa hè ",
+    time: "Thứ Tư, 05/02/2025",
+    image: "assets/images/giay1.jpg",
+    des: "Giới thiệu về ba loại giày thời trang phù hợp cho mùa hè. Giúp người đọc lựa chọn giày thoáng mát, tiện lợi và hợp xu hướng thời trang trong điều kiện thời tiết nắng nóng. Có thể đề cập đến các tiêu chí như chất liệu thoáng khí, kiểu dáng nhẹ nhàng và tính ứng dụng cao cho các hoạt động ngoài trời trong mùa hè.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatibus voluptatum veniam, ullam, molestiae alias aperiam esse ipsa voluptatem, rerum facilis exercitationem excepturi doloremque doloribus natus adipisci ipsum corporis quisquam Lorem ipsum dolor sit amet consectetur !",
+  },
+  {
+    id: 2,
+    title: "Gợi ý những mẫu giày hàn quốc sang chảnh nên mua cho người yêu ",
+    image: "assets/images/giay2.jpg",
+    time: "Thứ Tư, 05/02/2025",
+    des: "Giới thiệu những mẫu giày hàn quốc nên mua cho người yêu. Giúp người đọc lựa chọn giày thoáng mát, tiện lợi và hợp xu hướng thời trang trong điều kiện thời tiết nắng nóng. Có thể đề cập đến các tiêu chí như chất liệu thoáng khí, kiểu dáng nhẹ nhàng và tính ứng dụng cao cho các hoạt động ngoài trời trong mùa hè.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatibus voluptatum veniam, ullam, molestiae alias aperiam esse ipsa voluptatem, rerum facilis exercitationem excepturi doloremque doloribus natus adipisci ipsum corporis quisquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatibus voluptatum veniam, ullam, molestiae alias aperiam esse ipsa voluptatem,  ipsum corporis quisquam!",
+  },
+  {
+    id: 3,
+    title:
+      "Xu hương thời trang nào sẽ chiếm sóng trong UShop thời gian sắp tới ",
+    image: "assets/images/giay3.jpg",
+    time: "Thứ Tư, 05/02/2025",
+    des: "Những loại giày sẽ thống trị lượt bán trong thời gian sắp tới của USHOP. Giúp người đọc lựa chọn giày thoáng mát, tiện lợi và hợp xu hướng thời trang trong điều kiện thời tiết nắng nóng. Có thể đề cập đến các tiêu chí như chất liệu thoáng khí, kiểu dáng nhẹ nhàng và tính ứng dụng cao cho các hoạt động ngoài trời trong mùa hè.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatibus voluptatum veniam, !",
   },
 ];
